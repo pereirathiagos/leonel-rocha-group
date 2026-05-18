@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="../Css/style.css">
 </head>
 
 <body>
@@ -27,16 +27,11 @@
 
         <div class="nav-container">
 
-            <a href="#" class="logo">
+            <a href="#inicio" class="logo" aria-label="Leonel Rocha Group - Início">
 
                 <div class="logo-box">
-                    <img src="/Src/Gemini_Generated_Image_ (1).png"
+                    <img src="../Src/logo-completa-navbar.png"
                         alt="Logo Leonel Rocha Group">
-                </div>
-
-                <div class="logo-text">
-                    <h2>Leonel Rocha Group</h2>
-                    <span>Administração & Consultoria</span>
                 </div>
 
             </a>
@@ -46,6 +41,8 @@
                 <a href="#inicio">Início</a>
 
                 <a href="#sobre">Sobre</a>
+
+                <a href="#servicos">Serviços</a>
 
                 <a href="#consultoria">Consultoria</a>
 
@@ -57,9 +54,11 @@
                 Solicitar Consultoria
             </a>
 
-            <div class="mobile-menu">
-                ☰
-            </div>
+            <button class="mobile-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
 
@@ -74,7 +73,7 @@
             <div class="hero-content">
 
                 <div class="tag">
-                    Estratégia • Transparência • Excelência Operacional
+                    Estratégia &bull; Transparência &bull; Excelência Operacional
                 </div>
 
                 <h1>
@@ -125,7 +124,7 @@
                     <div class="card-item">
 
                         <div class="card-icon">
-                            🏢
+                            &#127970;
                         </div>
 
                         <div>
@@ -144,7 +143,7 @@
                     <div class="card-item">
 
                         <div class="card-icon">
-                            📊
+                            &#128202;
                         </div>
 
                         <div>
@@ -163,7 +162,7 @@
                     <div class="card-item">
 
                         <div class="card-icon">
-                            🛡️
+                            &#128737;
                         </div>
 
                         <div>
@@ -231,7 +230,7 @@
 
             <div class="about-image">
 
-                <img src="/Src/Gemini_Generated_Image_ (1).png"
+                <img src="../Src/Gemini_Generated_Image_ (1).png"
                     alt="Leonel Rocha Group">
 
             </div>
@@ -400,41 +399,98 @@
 
         </div>
 
-        <form class="cadastro-form">
+        <div class="cadastro-panel">
 
-            <div class="input-group">
-                <input type="text"
-                    placeholder="Nome Completo"
-                    required>
+            <div class="cadastro-info">
+                <span class="panel-kicker">Atendimento estratégico</span>
+
+                <h3>
+                    Conte com uma análise clara para melhorar sua gestão.
+                </h3>
+
+                <p>
+                    Envie seus dados e nossa equipe identifica o melhor caminho
+                    para organização, controle financeiro e eficiência operacional.
+                </p>
+
+                <div class="panel-benefits">
+                    <div>
+                        <strong>01</strong>
+                        Diagnóstico inicial
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        Plano personalizado
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        Retorno ágil pelo WhatsApp
+                    </div>
+                </div>
             </div>
 
-            <div class="input-group">
-                <input type="email"
-                    placeholder="Seu E-mail"
-                    required>
-            </div>
+            <form class="cadastro-form">
 
-            <div class="input-group">
-                <input type="text"
-                    placeholder="Telefone / WhatsApp"
-                    required>
-            </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text"
+                            placeholder="Seu nome"
+                            required>
+                    </div>
 
-            <div class="input-group">
-                <input type="text"
-                    placeholder="Empresa ou Condomínio">
-            </div>
+                    <div class="input-group">
+                        <label for="telefone">WhatsApp</label>
+                        <input id="telefone" type="text"
+                            placeholder="(62) 99999-9999"
+                            required>
+                    </div>
+                </div>
 
-            <div class="input-group">
-                <textarea
-                    placeholder="Descreva sua necessidade"></textarea>
-            </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email"
+                            placeholder="voce@email.com"
+                            required>
+                    </div>
 
-            <button type="submit">
-                Solicitar Atendimento
-            </button>
+                    <div class="input-group">
+                        <label for="empresa">Empresa ou condomínio</label>
+                        <input id="empresa" type="text"
+                            placeholder="Nome da organização">
+                    </div>
+                </div>
 
-        </form>
+                <div class="input-group">
+                    <label for="servico">Principal necessidade</label>
+                    <select id="servico">
+                        <option>Administração condominial</option>
+                        <option>Consultoria empresarial</option>
+                        <option>Controle financeiro</option>
+                        <option>Gestão de RH</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem"
+                        placeholder="Descreva brevemente o que você precisa"></textarea>
+                </div>
+
+                <button type="submit">
+                    Solicitar Atendimento
+                </button>
+
+                <small>
+                    Resposta humanizada e direcionada para sua necessidade.
+                </small>
+
+            </form>
+
+        </div>
 
     </section>
 
@@ -477,7 +533,7 @@
                 <h3>Atendimento</h3>
 
                 <p>
-                    Segunda à Sexta • 08h às 18h
+                    Segunda à Sexta &bull; 08h às 18h
                 </p>
 
             </div>
@@ -494,7 +550,7 @@
 
             <div class="footer-logo">
 
-                <img src="/Src/Gemini_Generated_Image_ (1).png"
+                <img src="../Src/Gemini_Generated_Image_ (1).png"
                     alt="Logo">
 
                 <h2>
@@ -550,7 +606,7 @@
 
         <div class="footer-bottom">
 
-            © 2026 Leonel Rocha Group — Todos os direitos reservados.
+            &copy; 2026 Leonel Rocha Group &mdash; Todos os direitos reservados.
 
         </div>
 
@@ -559,202 +615,190 @@
     <!-- ADICIONE ANTES DE FECHAR O </body> -->
 
 <script>
-
-/* =========================================
-   MENU MOBILE
-========================================= */
-
+const navbar = document.querySelector(".navbar");
 const mobileMenu = document.querySelector(".mobile-menu");
 const menu = document.querySelector(".menu");
-
-mobileMenu.addEventListener("click", () => {
-
-    menu.classList.toggle("active");
-
-});
-
-/* =========================================
-   NAVBAR SCROLL EFFECT
-========================================= */
-
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add("navbar-scroll");
-
-    } else {
-
-        navbar.classList.remove("navbar-scroll");
-
-    }
-
-});
-
-/* =========================================
-   SCROLL REVEAL ANIMATION
-========================================= */
-
-const reveals = document.querySelectorAll(`
-.hero-content,
-.hero-card,
-.stat-box,
-.about-image,
-.about-content,
-.service-card,
-.contact-card,
-.consultoria-content,
-.cadastro-form
+const navLinks = document.querySelectorAll(".menu a");
+const sections = document.querySelectorAll("section[id]");
+const whatsappBtn = document.querySelector(".btn-primary");
+const typingElement = document.querySelector(".hero h1 span");
+const counters = document.querySelectorAll(".stat-box h2");
+const revealItems = document.querySelectorAll(`
+    .hero-content,
+    .hero-card,
+    .stat-box,
+    .about-image,
+    .about-content,
+    .service-card,
+    .contact-card,
+    .consultoria-content,
+    .cadastro-form
 `);
 
-const revealOnScroll = () => {
+const closeMenu = () => {
+    menu.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    document.body.classList.remove("nav-open");
+    mobileMenu.setAttribute("aria-expanded", "false");
+};
 
-    reveals.forEach((element) => {
+mobileMenu.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("active");
+    mobileMenu.classList.toggle("active", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
+    mobileMenu.setAttribute("aria-expanded", String(isOpen));
+});
 
-        const windowHeight = window.innerHeight;
-        const revealTop = element.getBoundingClientRect().top;
-        const revealPoint = 120;
+navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
 
-        if(revealTop < windowHeight - revealPoint){
+document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape"){
+        closeMenu();
+    }
+});
 
-            element.classList.add("active-reveal");
+document.addEventListener("click", (event) => {
+    if(!navbar.contains(event.target)){
+        closeMenu();
+    }
+});
 
+const updateNavbar = () => {
+    navbar.classList.toggle("navbar-scroll", window.scrollY > 40);
+};
+
+window.addEventListener("scroll", updateNavbar, { passive: true });
+updateNavbar();
+
+const activateCurrentSection = () => {
+    let currentId = "inicio";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 180;
+
+        if(window.scrollY >= sectionTop){
+            currentId = section.id;
         }
-
     });
 
-};
-
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
-
-/* =========================================
-   CONTADOR ANIMADO
-========================================= */
-
-const counters = document.querySelectorAll(".stat-box h2");
-
-const startCounter = () => {
-
-    counters.forEach(counter => {
-
-        const updateCounter = () => {
-
-            const target = +counter.innerText.replace(/\D/g, '');
-            const count = +counter.getAttribute("data-count") || 0;
-
-            const increment = target / 80;
-
-            if(count < target){
-
-                const value = Math.ceil(count + increment);
-
-                counter.setAttribute("data-count", value);
-
-                if(counter.innerText.includes("%")){
-
-                    counter.innerText = value + "%";
-
-                } else if(counter.innerText.includes("+")){
-
-                    counter.innerText = "+" + value;
-
-                } else {
-
-                    counter.innerText = value;
-
-                }
-
-                setTimeout(updateCounter, 20);
-
-            }
-
-        };
-
-        updateCounter();
-
+    navLinks.forEach((link) => {
+        link.classList.toggle("active-link", link.getAttribute("href") === `#${currentId}`);
     });
-
 };
 
-startCounter();
+window.addEventListener("scroll", activateCurrentSection, { passive: true });
+activateCurrentSection();
 
-/* =========================================
-   EFEITO DIGITAÇÃO HERO
-========================================= */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("active-reveal");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.16 });
 
-const typingElement = document.querySelector(".hero h1 span");
+revealItems.forEach((item) => revealObserver.observe(item));
 
-const text = "Soluções Inteligentes para Condomínios e Empresas";
+const animateCounter = (counter) => {
+    const originalText = counter.dataset.original || counter.innerText.trim();
+    counter.dataset.original = originalText;
 
-let index = 0;
-
-function typingEffect(){
-
-    if(index < text.length){
-
-        typingElement.innerHTML += text.charAt(index);
-
-        index++;
-
-        setTimeout(typingEffect, 45);
-
+    if(originalText.includes("/") || counter.dataset.counted === "true"){
+        return;
     }
 
-}
+    const target = Number(originalText.replace(/\D/g, ""));
+    const hasPlus = originalText.includes("+");
+    const hasPercent = originalText.includes("%");
 
-typingElement.innerHTML = "";
+    if(!target){
+        return;
+    }
+
+    counter.dataset.counted = "true";
+
+    let count = 0;
+    const step = Math.max(1, Math.ceil(target / 80));
+
+    const updateCounter = () => {
+        count = Math.min(target, count + step);
+        counter.innerText = `${hasPlus ? "+" : ""}${count}${hasPercent ? "%" : ""}`;
+
+        if(count < target){
+            requestAnimationFrame(updateCounter);
+        }
+    };
+
+    updateCounter();
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.55 });
+
+counters.forEach((counter) => counterObserver.observe(counter));
+
+const typingText = "Soluções Inteligentes para Condomínios e Empresas";
+let typingIndex = 0;
+
+const typingEffect = () => {
+    typingElement.textContent = typingText.slice(0, typingIndex);
+    typingIndex += 1;
+
+    if(typingIndex <= typingText.length){
+        setTimeout(typingEffect, 42);
+    }
+};
 
 typingEffect();
 
-/* =========================================
-   BOTÃO WHATSAPP
-========================================= */
-
-const whatsappBtn = document.querySelector(".btn-primary");
-
-whatsappBtn.addEventListener("click", () => {
+whatsappBtn.addEventListener("click", (event) => {
+    event.preventDefault();
 
     window.open(
-        "https://wa.me/5562999999999?text=Olá,%20gostaria%20de%20solicitar%20uma%20consultoria.",
-        "_blank"
+        "https://wa.me/5562999999999?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20uma%20consultoria.",
+        "_blank",
+        "noopener"
     );
-
 });
 
-/* =========================================
-   PARTICULAS PREMIUM
-========================================= */
+const form = document.querySelector(".cadastro-form");
 
-const body = document.querySelector("body");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.classList.add("form-success");
+    form.querySelector("button").textContent = "Solicitação pronta para envio";
+});
 
-for(let i = 0; i < 25; i++){
+const particleArea = document.createDocumentFragment();
 
-    let particle = document.createElement("span");
+for(let i = 0; i < 32; i++){
+    const particle = document.createElement("span");
+    const size = Math.random() * 4 + 2;
 
     particle.classList.add("particle");
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.opacity = Math.random() * 0.45 + 0.18;
+    particle.style.animationDuration = `${Math.random() * 12 + 12}s`;
+    particle.style.animationDelay = `${Math.random() * 8}s`;
 
-    particle.style.left = Math.random() * window.innerWidth + "px";
-
-    particle.style.animationDuration =
-        (Math.random() * 10 + 10) + "s";
-
-    particle.style.opacity = Math.random();
-
-    particle.style.width =
-        particle.style.height =
-        (Math.random() * 4 + 2) + "px";
-
-    body.appendChild(particle);
-
+    particleArea.appendChild(particle);
 }
 
+document.body.appendChild(particleArea);
 </script>
 
-<script src="/Js/script.js"></script>
+
 
 </body>
 
