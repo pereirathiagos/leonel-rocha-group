@@ -7,7 +7,7 @@ Landing page institucional para administração de condomínios, gestão condomi
 ```text
 .
 ├── index.html
-├── css/
+├── Css/
 │   └── style.css
 ├── js/
 │   └── script.js
