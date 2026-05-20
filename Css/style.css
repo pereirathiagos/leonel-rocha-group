@@ -1,4 +1,22 @@
-/* Base e variáveis */
+/* =========================================================
+   Leonel Rocha Broker - Estilos principais
+
+   Sumário:
+   1. Base e variáveis
+   2. Cabeçalho
+   3. Hero
+   4. Seções gerais
+   5. Indicadores e cards
+   6. Conteúdo institucional
+   7. Soluções
+   8. Empreendimentos e diferenciais
+   9. Contato
+   10. Rodapé
+   11. WhatsApp flutuante
+   12. Responsividade
+========================================================= */
+
+/* 1. Base e variáveis */
 :root{
   --green-950:#02110b;
   --green-900:#061f15;
@@ -72,7 +90,7 @@ h3{
   font-family:'Poppins',sans-serif;
 }
 
-/* Cabeçalho */
+/* 2. Cabeçalho */
 .site-header{
   position:fixed;
   top:0;
@@ -202,7 +220,7 @@ h3{
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* Hero */
+/* 3. Hero */
 .hero{
   min-height:100vh;
   padding:188px 28px 92px;
@@ -328,7 +346,7 @@ h3{
   line-height:1.75;
 }
 
-/* Seções gerais */
+/* 4. Seções gerais */
 section,
 .site-footer{
   padding-left:28px;
@@ -390,7 +408,7 @@ section,
   margin-right:auto;
 }
 
-/* Indicadores e cards */
+/* 5. Indicadores e cards */
 .metrics{
   margin-top:-54px;
   position:relative;
@@ -434,7 +452,7 @@ section,
   line-height:1.5;
 }
 
-/* Conteúdo */
+/* 6. Conteúdo institucional */
 .about,
 .solutions,
 .properties,
@@ -509,7 +527,7 @@ section,
   color:var(--muted);
 }
 
-/* Soluções */
+/* 7. Soluções */
 .solution-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -554,7 +572,7 @@ section,
   line-height:1.75;
 }
 
-/* Empreendimentos e diferenciais */
+/* 8. Empreendimentos e diferenciais */
 .property-copy{
   border-radius:var(--radius-lg);
   padding:34px;
@@ -624,7 +642,7 @@ section,
   min-height:380px;
 }
 
-/* Contato */
+/* 9. Contato */
 .contact{
   padding-bottom:120px;
 }
@@ -729,7 +747,7 @@ section,
   border-color:rgba(37,211,102,.34);
 }
 
-/* Rodapé */
+/* 10. Rodapé */
 .site-footer{
   padding-top:72px;
   background:linear-gradient(180deg, rgba(2,17,11,.2), rgba(2,17,11,.92));
@@ -779,6 +797,19 @@ section,
   color:var(--gold-300);
   background:rgba(255,255,255,.06);
   font-weight:800;
+  transition:transform .25s ease, background .25s ease, color .25s ease;
+}
+
+.social-links a:hover{
+  color:#102316;
+  background:linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  transform:translateY(-3px);
+}
+
+.social-links svg{
+  width:21px;
+  height:21px;
+  fill:currentColor;
 }
 
 .footer-bottom{
@@ -795,9 +826,10 @@ section,
 .footer-bottom a{
   color:var(--gold-300);
   font-weight:700;
+  cursor:pointer;
 }
 
-/* WhatsApp flutuante */
+/* 11. WhatsApp flutuante */
 .whatsapp-float{
   position:fixed;
   right:24px;
@@ -841,7 +873,7 @@ section,
   }
 }
 
-/* Responsividade */
+/* 12. Responsividade */
 @media(max-width:1180px){
   .header-container{
     grid-template-columns:auto 1fr auto;
