@@ -97,6 +97,7 @@ handleScroll();
 
 // Formulário direcionando para WhatsApp
 const contactForm = document.querySelector(".contact-form");
+const backToTop = document.querySelector(".back-to-top");
 
 contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -115,4 +116,13 @@ contactForm.addEventListener("submit", (event) => {
         contactForm.querySelector("button").textContent = "Enviar solicitação";
         contactForm.classList.remove("sent");
     }, 2400);
+});
+
+// Voltar ao topo com rolagem suave
+backToTop.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });

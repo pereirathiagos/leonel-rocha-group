@@ -779,6 +779,19 @@ section,
   color:var(--gold-300);
   background:rgba(255,255,255,.06);
   font-weight:800;
+  transition:transform .25s ease, background .25s ease, color .25s ease;
+}
+
+.social-links a:hover{
+  color:#102316;
+  background:linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  transform:translateY(-3px);
+}
+
+.social-links svg{
+  width:21px;
+  height:21px;
+  fill:currentColor;
 }
 
 .footer-bottom{
@@ -795,6 +808,7 @@ section,
 .footer-bottom a{
   color:var(--gold-300);
   font-weight:700;
+  cursor:pointer;
 }
 
 /* WhatsApp flutuante */
