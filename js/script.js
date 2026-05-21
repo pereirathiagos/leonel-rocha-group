@@ -103,6 +103,7 @@ handleScroll();
 
 // Formulário direcionando para WhatsApp
 const contactForm = document.querySelector(".contact-form");
+const backToTop = document.querySelector(".back-to-top");
 
 if(contactForm){
     contactForm.addEventListener("submit", (event) => {
@@ -128,8 +129,6 @@ if(contactForm){
 }
 
 // Voltar ao topo
-const backToTop = document.querySelector(".back-to-top");
-
 if(backToTop){
     backToTop.addEventListener("click", (event) => {
         event.preventDefault();

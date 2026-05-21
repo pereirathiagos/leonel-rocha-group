@@ -1189,12 +1189,14 @@ section,
   border-radius:50%;
   color:var(--gold-300);
   background:rgba(255,255,255,.06);
-  transition:transform .2s ease, background .2s ease;
+  font-weight:800;
+  transition:transform .25s ease, background .25s ease, color .25s ease;
 }
 
 .social-links a:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,.12);
+  color:#102316;
+  background:linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  transform:translateY(-3px);
 }
 
 .social-links svg{
@@ -1216,6 +1218,7 @@ section,
 .footer-bottom a{
   color:var(--gold-300);
   font-weight:700;
+  cursor:pointer;
 }
 
 .whatsapp-float{
