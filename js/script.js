@@ -1,22 +1,15 @@
 /* =========================================================
    Leonel Rocha Broker - Scripts principais
-
-   Responsabilidades:
-   1. Menu mobile
-   2. Animações de entrada
-   3. Contadores
-   4. Estado do cabeçalho e links ativos
-   5. Formulário via WhatsApp
-   6. Voltar ao topo
+   Menu, animações, navegação ativa e envio para WhatsApp.
 ========================================================= */
 
-// 1. Menu mobile
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
 const mainNav = document.querySelector(".main-nav");
 const navLinks = document.querySelectorAll(".main-nav a");
 const sections = document.querySelectorAll("section[id]");
 
+// Menu mobile
 const closeMenu = () => {
     if(!mainNav || !menuButton){
         return;
@@ -40,9 +33,33 @@ navLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
 });
 
-// 2. Animações de entrada
+// Abas da consultoria
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabPanels = document.querySelectorAll(".tab-panel");
+
+tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const targetId = button.dataset.tab;
+
+        tabButtons.forEach((item) => {
+            const isActive = item === button;
+
+            item.classList.toggle("active", isActive);
+            item.setAttribute("aria-selected", String(isActive));
+        });
+
+        tabPanels.forEach((panel) => {
+            const isActive = panel.id === targetId;
+
+            panel.classList.toggle("active", isActive);
+            panel.hidden = !isActive;
+        });
+    });
+});
+
+// Animações suaves de entrada
 const animatedItems = document.querySelectorAll(
-    ".observe-section, .solution-card, .differential-grid article, .metrics article"
+    ".observe-section, .pain-card, .solution-card"
 );
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -52,54 +69,20 @@ const revealObserver = new IntersectionObserver((entries) => {
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.16 });
+}, { threshold: 0.14 });
 
 animatedItems.forEach((item) => revealObserver.observe(item));
 
-// 3. Contadores animados
-const counters = document.querySelectorAll("[data-counter]");
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(!entry.isIntersecting){
-            return;
-        }
-
-        const element = entry.target;
-        const target = Number(element.dataset.counter);
-        const suffix = element.nextElementSibling?.textContent?.includes("%") ? "%" : "";
-        const step = Math.max(1, Math.ceil(target / 70));
-
-        let value = 0;
-
-        const tick = () => {
-            value = Math.min(target, value + step);
-            element.textContent = `${value}${suffix}`;
-
-            if(value < target){
-                requestAnimationFrame(tick);
-            }
-        };
-
-        tick();
-        counterObserver.unobserve(element);
-    });
-}, { threshold: 0.6 });
-
-counters.forEach((counter) => counterObserver.observe(counter));
-
-// 4. Estado do cabeçalho, link ativo e parallax discreto
-const parallaxCards = document.querySelectorAll(".parallax-card");
-
+// Cabeçalho e link ativo
 const updateHeaderState = () => {
     if(header){
-        header.classList.toggle("is-scrolled", window.scrollY > 40);
+        header.classList.toggle("is-scrolled", window.scrollY > 30);
     }
 };
 
 const updateActiveLink = () => {
     sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 170;
+        const sectionTop = section.offsetTop - 150;
         const id = section.getAttribute("id");
 
         if(window.scrollY >= sectionTop){
@@ -110,26 +93,15 @@ const updateActiveLink = () => {
     });
 };
 
-const updateParallax = () => {
-    parallaxCards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const movement = (window.innerHeight - rect.top) * 0.025;
-        const limitedMovement = Math.min(18, Math.max(-18, movement));
-
-        card.style.transform = `translateY(${limitedMovement}px)`;
-    });
-};
-
 const handleScroll = () => {
     updateHeaderState();
     updateActiveLink();
-    updateParallax();
 };
 
 window.addEventListener("scroll", handleScroll, { passive: true });
 handleScroll();
 
-// 5. Formulário direcionando para WhatsApp
+// Formulário direcionando para WhatsApp
 const contactForm = document.querySelector(".contact-form");
 
 if(contactForm){
@@ -138,22 +110,24 @@ if(contactForm){
 
         const data = new FormData(contactForm);
         const message = encodeURIComponent(
-            `Olá, gostaria de falar com um consultor sobre gestão condominial.\n\nNome: ${data.get("nome")}\nWhatsApp: ${data.get("telefone")}\nCondomínio/empresa: ${data.get("empresa") || "Não informado"}\nServiço: ${data.get("servico")}\nMensagem: ${data.get("mensagem") || "Não informado"}`
+            `Olá, gostaria de solicitar uma consultoria para meu empreendimento.\n\nNome: ${data.get("nome")}\nWhatsApp: ${data.get("telefone")}\nCondomínio/empresa: ${data.get("empresa") || "Não informado"}\nNecessidade: ${data.get("servico")}\nMensagem: ${data.get("mensagem") || "Não informado"}`
         );
 
+        const button = contactForm.querySelector("button");
+
         contactForm.classList.add("sent");
-        contactForm.querySelector("button").textContent = "Abrindo WhatsApp...";
+        button.textContent = "Abrindo WhatsApp...";
 
         window.open(`https://wa.me/5564999999999?text=${message}`, "_blank", "noopener");
 
         setTimeout(() => {
-            contactForm.querySelector("button").textContent = "Enviar solicitação";
+            button.textContent = "Solicitar consultoria";
             contactForm.classList.remove("sent");
         }, 2400);
     });
 }
 
-// 6. Voltar ao topo com rolagem suave
+// Voltar ao topo
 const backToTop = document.querySelector(".back-to-top");
 
 if(backToTop){
